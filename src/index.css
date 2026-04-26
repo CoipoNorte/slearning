@@ -1,0 +1,117 @@
+/* ============================================
+   slearning — Arch Linux Hacker Theme 🐧
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Colores Arch Linux */
+  --color-arch-blue: #1793d1;
+  --color-arch-blue-light: #4db8e8;
+  --color-arch-blue-dark: #0e6e9e;
+  --color-arch-cyan: #00e5ff;
+  --color-arch-green: #00ff41;
+  --color-arch-green-dim: #00b32d;
+  --color-arch-red: #ff1744;
+  --color-arch-yellow: #ffea00;
+  --color-arch-orange: #ff9100;
+  --color-arch-magenta: #d500f9;
+  --color-arch-purple: #7c4dff;
+  --color-arch-white: #e0e0e0;
+  --color-arch-gray: #6e6e6e;
+  --color-arch-gray-light: #9e9e9e;
+  --color-arch-gray-dark: #3a3a3a;
+
+  /* Fondos terminal */
+  --color-term-bg: #0d1117;
+  --color-term-surface: #161b22;
+  --color-term-border: #21262d;
+  --color-term-hover: #1c2129;
+  --color-term-active: #22272e;
+  --color-term-input: #0d1117;
+
+  /* Animaciones */
+  --animate-fade-in: fadeIn 0.3s ease-out;
+  --animate-slide-in: slideIn 0.3s ease-out;
+  --animate-glow: archGlow 2s ease-in-out infinite;
+  --animate-typing: typing 2s steps(30) forwards;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-scan: scan 4s linear infinite;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes archGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(23, 147, 209, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(23, 147, 209, 0.6), 0 0 40px rgba(23, 147, 209, 0.2); }
+  }
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+}
+
+/* ── Estilos base ── */
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--color-term-bg);
+  color: var(--color-arch-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Arch */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-term-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-arch-blue); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-arch-blue-light); }
+::selection { background: rgba(23, 147, 209, 0.4); color: white; }
+
+/* ── Utilities ── */
+@utility arch-glass {
+  background: rgba(22, 27, 34, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(33, 38, 45, 0.8);
+}
+
+@utility arch-border {
+  border: 1px solid #21262d;
+}
+
+@utility arch-glow-text {
+  text-shadow: 0 0 8px rgba(23, 147, 209, 0.6), 0 0 16px rgba(23, 147, 209, 0.3);
+}
+
+@utility arch-glow-green {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.6), 0 0 16px rgba(0, 255, 65, 0.3);
+}
+
+@utility font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@utility font-terminal {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+@utility term-panel {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+}
+
+@utility prompt-symbol {
+  color: var(--color-arch-green);
+}
