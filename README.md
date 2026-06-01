@@ -1,4 +1,4 @@
-# 🐧 slearning
+# 🐧 [slearning](https://coiponorte.github.io/slearning/)
 
 Guía interactiva estilo Arch Linux para aprender desarrollo backend: Express.js, SQLite y APIs REST. Navegación con sidebar colapsable, demos en vivo y código copiable.
 
